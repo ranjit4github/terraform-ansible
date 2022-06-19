@@ -29,6 +29,7 @@
 
      - name: Copy file
        copy: src=target/LoginWebApp.war dest=/usr/share/tomcat/webapps/LoginWebApp.war
+       notify: restart tomcat
        
      - name: Start tomcat
-       shell: /usr/share/tomcat/bin/startup.sh
+       service: name=tomcat state=started enabled=yes
