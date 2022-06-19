@@ -1,5 +1,5 @@
 ---
- - hosts: webservers
+ - hosts: all
    become: true
    tasks:
      - name: Install Java
@@ -28,6 +28,7 @@
        file: path=/usr/share/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
 
      - name: Copy file
-       copy: src=/home/centos/LoginWebApp.war dest=/usr/share/tomcat/webapps/LoginWebApp.war
+       copy: src=target/LoginWebApp.war dest=/usr/share/tomcat/webapps/LoginWebApp.war
+       
      - name: Start tomcat
        shell: /usr/share/tomcat/bin/startup.sh
