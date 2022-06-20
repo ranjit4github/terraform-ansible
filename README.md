@@ -15,5 +15,7 @@ Run Ansible Playbook
 	
 	- Deploy Application
 
+https://youtu.be/3G7fuhjepPw
+
 ![Screenshot 2022-06-20 at 9 55 23 AM](https://user-images.githubusercontent.com/58227542/174525141-39a32cbc-f215-4ebd-93f8-2e836ceb264e.png)
 
