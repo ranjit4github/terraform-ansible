@@ -29,7 +29,14 @@
 
      - name: Copy file
        copy: src=target/LoginWebApp.war dest=/usr/share/tomcat/webapps/LoginWebApp.war
-       notify: restart tomcat
-       
-     - name: Start tomcat
-       service: name=tomcat state=started enabled=yes
+
+     - name: Allow all access to tcp port 8080
+       ufw:
+         rule: allow
+         port: '8080'
+         proto: tcp
+
+     - name: Start Tomcat
+       command: /usr/share/tomcat/bin/startup.sh
+       become: yes
+       become_user: root
